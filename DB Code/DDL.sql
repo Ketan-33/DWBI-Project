@@ -1,5 +1,9 @@
+create database DWBI;
+
+create schema dwbi_schema;
+
 -- Dimension Table: DimDate
-CREATE TABLE DimDate (
+CREATE TABLE DimDate (DWBI.DWBI_SCHEMA.STAGING_AREA
     DateID INT PRIMARY KEY,
     Date DATE,
     DayOfWeek VARCHAR(10),
@@ -11,7 +15,7 @@ CREATE TABLE DimDate (
 
 -- Dimension Table: DimCustomer
 CREATE TABLE DimCustomer (
-    CustomerID INT PRIMARY KEY autoincrement start 1 increment 1,
+    CustomerID INT PRIMARY KEY,
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
     Gender VARCHAR(10),
@@ -20,10 +24,12 @@ CREATE TABLE DimCustomer (
     Address VARCHAR(255),
     City VARCHAR(50),
     State VARCHAR(50),
-    ZipCode VARCHAR(10),
+    PostalCode VARCHAR(10),
     Country VARCHAR(50),
-    LoyaltyProgramID INT
+    LoyaltyProgramID INT,
+    PhoneNumber VARCHAR(20)
 );
+
 
 -- Dimension Table: DimProduct
 CREATE TABLE DimProduct (
@@ -47,6 +53,8 @@ CREATE TABLE DimStore (
     Country VARCHAR(50),
     ManagerName VARCHAR(100)
 );
+alter table Dimstore rename column
+zipcode to region ;
 
 -- Dimension Table: DimLoyaltyProgram
 CREATE TABLE DimLoyaltyProgram (
