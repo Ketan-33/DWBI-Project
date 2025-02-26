@@ -14,7 +14,7 @@ Hands-on experience with **Snowflake**, **SQL**, **Python**, and **PowerBI** to 
 ## Project Screenshots
 
 ### ER Diagram
-![ER Diagram Design](screenshots/er.png)
+![ER Diagram Design](Screenshots/er.png)
 
 ### PowerBI Dashboard
-![Sales Dashboard](screenshots/bi.png)
+![Sales Dashboard](Screenshots/bi.png)
